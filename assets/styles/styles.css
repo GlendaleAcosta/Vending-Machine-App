@@ -1,0 +1,6 @@
+@import "modules/normalize.css";
+@import "modules/_fonts.css";
+@import "modules/_wrapper.css";
+@import "modules/_vending-machine.css";
+@import "modules/_vending-machine-panel.css";
+@import "modules/_item.css";

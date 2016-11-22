@@ -1,0 +1,168 @@
+.vending-machine-panel {
+  width: 35%;
+  height: 100vh;
+  float: right;
+  background-color: #3c598e;
+  /*background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+  background-image: linear-gradient(141deg, rgb(15, 184, 173) 0%, rgb(31, 200, 219) 51%, rgb(44, 181, 232) 75%);*/
+  /*background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
+  box-shadow: inset 0px 0px 15px rgba(40, 40, 40, 1);*/
+}
+
+.panel-container {
+  width: 90%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.panel-title {
+  color: #7dde7d;
+  font-size: 1.6em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.panel-purchases {
+  background-color: cornflowerblue;
+  width: 100%;
+  height: 200px;
+  color: #fff;
+  margin-top:10px;
+  margin-bottom:10px;
+  padding: 5px;
+}
+    .panel-purchases h4{
+      font-size: 1.2em;
+      padding:5px;
+      background-color: #3c598e;
+    }
+
+.purchases-list {
+
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  padding-left: 20px;
+}
+
+    .panel-purchases ul li {
+      width: 50%;
+      list-style-type: none;
+      padding: 2px;
+    }
+
+.panel-form {
+  width: 100%;
+
+  background-color: #3c598e;
+  margin-bottom:10px;
+}
+    .panel-form h4 {
+      font-size: 1.2em;
+      background-color: cornflowerblue;
+      color: #fff;
+    }
+
+.form-title {
+  background-color: cornflowerblue;
+  display: block;
+  padding: 5px;
+  font-size: 1.2em;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+}
+
+.form-container {
+  padding: 5px;
+  background-color: #3c598e;
+  border: 2px solid cornflowerblue;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: left;
+  padding: 5px;
+  background-color: #3c598e;
+  border: 2px solid cornflowerblue;
+  margin-bottom: 10px;
+  padding: 40px;
+}
+
+.form-number {
+  text-align: right;
+  font-size: 70px;
+  padding-right: 5px;
+  color: #fff;
+}
+
+.form-input {
+  width: 70px;
+  font-size: 70px;
+  font-family: 'Lato', sans-serif;
+  border:none;
+  background-color: #5578b7;
+  color: #fff;
+  transition: 0.1s ease-in-out;
+}
+
+    .form-input:focus {
+      /*background-color: #3c598e;*/
+      outline: none;
+    }
+
+.panel-message{
+  color: #fff;
+}
+    .success {
+      color: #7dde7d !important;
+      animation: myframes 0.3s ease-in-out 0s;
+    }
+
+    .failed {
+      color: #f57566;
+    }
+
+
+
+.btn-container {
+  display: flex;
+}
+
+
+    .btn-1{
+      width: 60%;
+      height: 50px;
+      background-color: #7dde7d;
+      border: none;
+      color: #fff;
+      outline: none;
+      cursor: pointer;
+      border: 2px solid #7dde7d;
+      transition: 0.15s ease-in-out;
+      cursor: pointer;
+    }
+
+        .btn-1:hover{
+          background-color: #449c47;
+        }
+
+    .btn-2{
+      width: 40%;
+      height: 50px;
+      background-color: cornflowerblue;
+      border: none;
+      color: #fff;
+      outline: none;
+      border: 2px solid cornflowerblue;
+      transition: 0.15s ease-in-out;
+      cursor: pointer;
+    }
+
+        .btn-2:hover {
+          background-color: #3b66b5;
+        }

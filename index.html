@@ -1,0 +1,88 @@
+<!DOCTYPE Html>
+<html lang="en" ng-app="vendingMachineApp">
+<head>
+  <title>Vending Machine App</title>
+
+
+  <link rel="stylesheet" href="assets/styles/styles.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="assets/js/App.js"></script>
+
+</head>
+<body>
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- 1. VENDING MACHINE CONTROLLER : (THE COOL VENDING MACHINE ON THE LEFT) -->
+
+    <!-- This block contains the vending machine and all its items (drinks) -->
+    <div class="vending-machine-container" ng-controller="vendingMachine">
+
+      <!-- Displays each vending machine item along with its quantity and
+      and item number for selection-->
+      <div class="item-box" ng-repeat="item in vendingMachineItems" ng-mouseover="overItemBox=true" ng-mouseleave="overItemBox=false" ng-click="selectedBox($index)">
+        <p class="item-top_left item-num">Item #{{ item.itemNum }}</p>
+        <div class="item-center">
+          <p class="item-name" ng-class="{itemNameBigger: overItemBox}">{{ item.item_name }}</p>
+          <p class="item-quantity">x{{item.quantity}}</p>
+        </div>
+        <!-- <p class="item-bottom item-price">${{item.price}}.00</p> -->
+        <img class="item-pic" ng-class="{itemPicRotate: overItemBox}" src="assets/images/item.png" />
+      </div>
+
+    </div>
+
+<!-- END VENDING MACHINE CONTROLLER -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- 2. VENDING MACHINE PANEL CONTROLLER -->
+
+    <!-- This block contains the right panel which shows the purchases, form, buttons,
+         and success messages -->
+    <div class="vending-machine-panel" ng-controller="vendingMachinePanel">
+      <div class="panel-container">
+
+        <h1 class="panel-title">Vending Machine App</h1>
+
+        <!-- Display's User's purchases and the quantity of each purchase -->
+        <div class="panel-purchases">
+          <h4 class="view-title">Purchases:</h4>
+          <ul class="purchases-list">
+            <li ng-repeat="possession in userPossessions">— {{possession.quantity}} {{possession.item_name}}</li>
+          </ul>
+        </div>
+
+        <!-- Form for User to select an item, buy, and save his/her history -->
+        <form class="panel-form"> <!--Form Start -->
+          <!-- Item Number Label -->
+          <label class="form-title text" for="itemNumber">Enter Item Number:</label>
+
+          <!-- Item Number Input -->
+          <div class="form-group">
+            <p class="form-number">#</p>
+            <input class="form-input" name="itemNumber" ng-model="itemNumber" type="text" maxlength="1" ng-change="changeitemNumber(itemNumber);"/>
+          </div>
+
+          <!-- Buy & Save Buttons -->
+          <div class="btn-container">
+            <button class="btn-1" type="submit" ng-click="clickedBuy();">BUY</button>
+            <button class="btn-2" ng-click="clickedSave()">SAVE</button>
+          </div>
+        </form> <!-- Form End -->
+
+        <!-- Success and Error Messages -->
+        <p class="panel-message">Message: <span class="failed" ng-class="{success: clickSuccess }">{{ messageFeedback }}</span></p>
+
+      </div>
+    </div>
+
+<!-- END VENDING MACHINE PANEL CONTROLLER-->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+</body>
+</html>
